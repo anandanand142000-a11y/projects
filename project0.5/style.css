@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: rgb(127, 205, 58);
+}
+
+.box {
+    height: 300px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow:2px 2px 2px 2px yellow;
+    overflow: hidden;
+    background-color: rgb(24, 131, 131);
+
+}
+.box h1 {
+    color: rgb(244, 237, 29);
+}
+
+input {
+    border-radius: 5px;
+}
+
+button {
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+button:hover{
+    transition: 0.3s;
+    box-shadow: 2px 2px 2px yellow;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: white;
+}
+li {
+    list-style: inside;
+    text-align: center;
+}
+
+
