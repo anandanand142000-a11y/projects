@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: antiquewhite;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slides {
+            position: relative;
+            width: 600px;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid black;
+            box-shadow: 2px 3px 3px 3px;
+        }
+
+        .slides img {
+            width: 600px;
+            height: 350px;
+            object-fit: cover;
+            display: none;
+        }
+
+        .slides img.active {
+            display: block;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            border-radius: 10px;
+            border: none;
+            
+
+        }
+
+        #pre {
+            left: 5px;
+        }
+
+        #nex {
+            right: 5px;
+        }
+
+        button:hover{
+            background-color: black;
+            color: white;
+        }
+
+        body {
+            animation-name: bd;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes bd{
+            20%{
+                background-color: rgb(171, 220, 118);
+            }
+
+            40%{
+                background-color: rgb(222, 135, 187);
+            }
+            60%{
+                background-color: rgb(100, 156, 225);
+            }
+            80%{
+                background-color: rgb(38, 209, 115);
+            }
+            100%{
+                background-color: rgb(224, 160, 115);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="slides">
+        <img src="pexels-eberhardgross-1004665.jpg" class="active">
+        <img src="pexels-freestockpro-1227513.jpg">
+        <img src="pexels-pok-rie-33563-2049422.jpg">
+        <img src="peace.jpg">
+        <img src="adventure.jpg">
+        <img src="pexels-pok-rie-33563-2049422.jpg">
+        <img src="pexels-thanhhoa-tran-640546-1462892.jpg">
+
+        <button id="pre">pre</button>
+        <button id="nex">next</button>
+    </div>
+    
+
+    <script>
+        let index = 0;
+        let images = document.querySelectorAll('.slides img')
+        function renderimage(i){
+            images[index].classList.remove('active')
+            index = (i + images.length)% images.length
+            images[index].classList.add('active')
+        }
+
+        document.getElementById('pre').addEventListener('click',()=>{
+            renderimage(index-1)
+        });
+
+        document.getElementById('nex').addEventListener('click',()=>{
+            renderimage(index+1)
+        });
+    </script>
+</body>
